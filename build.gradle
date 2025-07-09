@@ -1,0 +1,21 @@
+
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.9.6'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.20.0'
+    testImplementation 'io.cucumber:cucumber-java:7.15.0'
+    testImplementation 'io.cucumber:cucumber-junit:7.15.0'
+    testImplementation 'io.qameta.allure:allure-cucumber7-jvm:2.24.0'
+    implementation 'org.apache.poi:poi-ooxml:5.2.5'
+}
+
+test {
+    useJUnitPlatform()
+}
