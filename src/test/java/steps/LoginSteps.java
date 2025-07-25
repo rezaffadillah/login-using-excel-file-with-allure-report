@@ -1,25 +1,25 @@
-
 package steps;
 
-import io.cucumber.java.en.*;
+import factory.DriverFactory;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.qameta.allure.Allure;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.junit.jupiter.api.Assertions;
 import pages.LoginPage;
 import utils.ExcelUtils;
-
+import org.testng.Assert;
 import java.io.ByteArrayInputStream;
 
 public class LoginSteps {
-    WebDriver driver;
+    WebDriver driver = DriverFactory.getDriver();
+    LoginPage loginPage = new LoginPage(driver);
 
     @Given("I open the login page")
     public void iOpenLoginPage() {
-        driver = new ChromeDriver();
-        driver.get("https://example.com/login");
+        System.out.println("URL already opened in Hooks. Current URL: " + driver.getCurrentUrl());
     }
 
     @When("I login with {string} data from Excel")
@@ -39,12 +39,6 @@ public class LoginSteps {
 
     @Then("I should see {string}")
     public void iShouldSeeExpectedResult(String expectedResult) {
-        String pageSource = driver.getPageSource();
-        if (expectedResult.equals("Dashboard Page")) {
-            Assertions.assertTrue(pageSource.contains("Welcome"));
-        } else if (expectedResult.equals("Login Failed")) {
-            Assertions.assertTrue(pageSource.contains("Invalid"));
-        }
-        driver.quit();
+        loginPage.isHomepageDisplayed(expectedResult);
     }
 }

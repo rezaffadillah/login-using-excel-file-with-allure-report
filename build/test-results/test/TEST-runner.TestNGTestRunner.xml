@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="runner.TestNGTestRunner" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-07-10T09:22:39" hostname="DESKTOP-UPO1JTH" time="21.922">
+  <properties/>
+  <testcase name="runScenario[0](&quot;Login with different types of users&quot;, &quot;Login functionality&quot;)" classname="runner.TestNGTestRunner" time="8.347"/>
+  <testcase name="runScenario[1](&quot;Login with different types of users&quot;, &quot;Login functionality&quot;)" classname="runner.TestNGTestRunner" time="13.568"/>
+  <system-out><![CDATA[
+Scenario Outline: Login with different types of users ?[90m# features/login.feature:11?[0m
+>>>> INITIALIZING CHROME DRIVER...
+>>>> Headless mode is set to: false
+>>>> CHROME DRIVER INITIALIZED!
+URL already opened in Hooks. Current URL: https://www.saucedemo.com/
+  ?[32mGiven ?[0m?[32mI open the login page?[0m                         ?[90m# steps.LoginSteps.iOpenLoginPage()?[0m
+  ?[32mWhen ?[0m?[32mI login with ?[0m?[32m?[1m"validUser"?[0m?[32m data from Excel?[0m       ?[90m# steps.LoginSteps.iLoginWithDataFromExcel(java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mI should see ?[0m?[32m?[1m"Swag Labs"?[0m                       ?[90m# steps.LoginSteps.iShouldSeeExpectedResult(java.lang.String)?[0m
+
+Scenario Outline: Login with different types of users                                           ?[90m# features/login.feature:12?[0m
+>>>> INITIALIZING CHROME DRIVER...
+>>>> Headless mode is set to: false
+>>>> CHROME DRIVER INITIALIZED!
+URL already opened in Hooks. Current URL: https://www.saucedemo.com/
+  ?[32mGiven ?[0m?[32mI open the login page?[0m                                                                   ?[90m# steps.LoginSteps.iOpenLoginPage()?[0m
+  ?[32mWhen ?[0m?[32mI login with ?[0m?[32m?[1m"invalidUser"?[0m?[32m data from Excel?[0m                                               ?[90m# steps.LoginSteps.iLoginWithDataFromExcel(java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mI should see ?[0m?[32m?[1m"Epic sadface: Username and password do not match any user in this service"?[0m ?[90m# steps.LoginSteps.iShouldSeeExpectedResult(java.lang.String)?[0m
+]]></system-out>
+  <system-err><![CDATA[Jul 10, 2025 4:22:42 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 138
+Jul 10, 2025 4:22:42 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 138.0.7204.97. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+Jul 10, 2025 4:22:49 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 138
+Jul 10, 2025 4:22:49 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 138.0.7204.97. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.20.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+</testsuite>
